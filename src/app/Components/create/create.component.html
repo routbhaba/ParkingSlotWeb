@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<div class="formbody">
+    <div class="form">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Book Id</label>
+                <input type="text" class="form-control" name="bookId" [(ngModel)]="parking.bookId " required
+                    (click)="Id()">
+                <span>{{bookId}}</span>
+            </div>
+           
+            <div class="form-group">
+                <label>Vehicle Number</label>
+                <input type="text" class="form-control" name="vehicleNo" [(ngModel)]="parking.vehicleNo" required
+                    (click)="vNumber()">
+                <span>{{VNo}}</span>
+
+            </div>
+            <div class="form-group">
+                <label >Phone Number</label>
+                <input type="text" class="form-control" name="phoneNo" [(ngModel)]="parking.phoneNo" required
+                (click)="phone()">
+                <span>{{phoneNumber}}</span>
+            </div>
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input type="text" class="form-control" name="customerName" [(ngModel)]="parking.customerName" required
+                (click)="name()">
+                <span>{{cusName}}</span>
+            </div>
+            <label>Vehicle Type</label>
+            <select name="vehicletype" [(ngModel)]="parking.vehicleType" (change)="vType()">
+                <option value="">Vehicle Type</option>
+                <option value="2W">2W</option>
+                <option value="4W">4W</option>
+            </select>
+            <br>
+            <span>{{vehicletype}}</span>
+
+            <br>
+            <label>Date Of Parking</label>
+            <div class="form-group">
+                <input type="date" name="dateOfParking" class="form-control" [(ngModel)]="parking.dateOfParking" required
+                (click)="date()">
+                <span>{{Date}}</span>
+            </div>
+            <label>Days</label>
+            <div class="form-control">
+                <input type="number" class="form-group" name="days" [(ngModel)]="parking.days" required
+                (click)="days()">
+                <span>{{Days}}</span>
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit">Submit</button>
+            <button style="margin-left: 5px;" class="btn btn-danger" (click)="cancel()">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<div class="searchdiv">
+    <div class="date-select">
+        <select name="date" [(ngModel)]="date" (chenge)="refresh()">
+            <option value="">Search Date</option>
+            <option value="Date">Date</option>
+            <option value="DateRange">Date Range</option>
+        </select>
+
+        <input style="margin-left: 6px;font-style: italic;" type="date" *ngIf="date === 'Date'" name="dateOfParking"
+            class="form-control" placeholder="Enter Age" [(ngModel)]="Sdate" (chenge)="refreshMehtod()">
+
+        <input style="margin-left: 6px;font-style: italic;" *ngIf="date === 'DateRange'" type="date"
+            class="form-control" placeholder="Enter Start Age" name="startdate" [(ngModel)]="SStartDate"
+            (chenge)="refreshMehtod()">
+        <input style="margin-left: 6px;font-style: italic;" *ngIf="date === 'DateRange'" type="date"
+            class="form-control" placeholder="Enter End Age" name="endDate" [(ngModel)]="SEndDate"
+            (chenge)="refreshMehtod()">
+
+    </div>
+
+
+    <select style="margin-left: 6px;font-style: italic;" name="status" [(ngModel)]="SStatus" (change)="refreshMehtod()">
+        <option value="">Status</option>
+        <option value="PENDING">PENDING</option>
+        <option value="BOOKED">BOOKED</option>
+        <option value="PARKED">PARKED</option>
+        <option value="DEPARTED">DEPARTED</option>
+        <option value="CANCELLED">CANCELLED</option>
+    </select>
+    <select style="margin-left: 6px;font-style: italic;" name="vehicleType" [(ngModel)]="SType" (change)="refreshMehtod()">
+        <option value="">Type</option>
+        <option value="2W">2W</option>
+        <option value="4W">4W</option>
+    </select>
+    <input style="margin-left: 6px;font-style: italic;" type="search" placeholder="Search Names"
+        name="customerName" [(ngModel)]="SCName" (input)="refreshMehtod()">
+
+    <input type="text" style="margin-left: 6px;font-style: italic;" placeholder="Vehicle Number"
+    name="vehicleNo" [(ngModel)]="SVNumber" (input)="refreshMehtod()">    
+    <button class="searchbutton" (click)="onSubmit()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg> Search</button>
+    <button class="clear" (click)="clear()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+        </svg> Clear</button>
+</div><div class="tablediv">
+    <div class="tables">
+        <table class="table table-striped table-hover" id="myTable">
+            <thead>
+
+                <tr>
+                    <th>Book Id</th>
+                    <th>Vehicle Number</th>
+                    <th>Phone No</th>
+                    <th>Name</th>
+                    <th>Vehicle Type</th>
+                    <th>Date Of Parking</th>
+                    <th>Days</th>
+                    <th>Pricr</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+    <br>
+    <div class="button">
+
+        <button (click)="update()" class="update"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                <path
+                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
+            </svg>Update</button>
+        <button (click)="status()" class="verify"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Verify</button>
+
+        <button (click)="cancel()" class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+            </svg> Cancel</button>
+
+
+    </div>

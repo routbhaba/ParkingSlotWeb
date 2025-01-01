@@ -1,0 +1,178 @@
+.tables {
+    max-width: 2000px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 450px;
+    background-color: aliceblue;
+    margin-left: 5%;
+    width: 90%;
+    border: 1px solid black;
+    margin-top: 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+  
+  
+  
+  
+  }
+  
+  th {
+  
+    background-color: rgb(113, 207, 244);
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  
+  .delete {
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    height: 35px;
+    width: 85px;
+  
+  
+  }
+  
+  
+  .delete:hover {
+    border-color: red;
+    background-color: white;
+    border-style: calc();
+    color: red;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  
+  }
+  
+  .update {
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    height: 35px;
+    width: 85px;
+    margin-left: 5px;
+  }
+  
+  .update:hover {
+    border-color: green;
+    background-color: white;
+    transition-duration: 0.5s;
+    color: green;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  }
+  
+  .create:hover {
+    border-color: green;
+    background-color: white;
+    transition-duration: 0.5s;
+    color: green;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  
+  }
+  
+  .searchbutton {
+    background-color: green;
+    color: white;
+    height: 35px;
+    margin-left: 6px;
+    margin-bottom: 3px;
+    margin-right: 3px;
+    padding: auto;
+    border-radius: 8px;
+  
+  }
+  
+  .searchbutton:hover {
+    transition-duration: 0.5s;
+    background-color: white;
+    border-color: green;
+    color: green;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  }
+  
+  .tablediv {
+    height: 517px;
+  }
+  
+  .clear {
+    background-color: gray;
+    border-radius: 5px;
+    color: black;
+    height: 35px;
+    margin-left: 6px;
+    margin-bottom: 3px;
+    margin-right: 3px;
+  
+  }
+  
+  .clear:hover {
+    border-color: black;
+    color: red;
+    transition-duration: 0.5s;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  
+  
+  
+  }
+  
+  h2 {
+    text-align: center;
+    color: rgb(165, 82, 82);
+  }
+  
+  .date-select {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .pt {
+    height: fit-content;
+  }
+  
+  .searchdiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    height: fit-content;
+  }
+  
+  input {
+    border: 1px solid black;
+  }
+  
+  .verify {
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: yellow;
+    color: black;
+    height: 35px;
+    width: 85px;
+  }
+  
+  .verify:hover {
+    border-color: yellow;
+    background-color: white;
+    border-style: calc();
+    color: black;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }

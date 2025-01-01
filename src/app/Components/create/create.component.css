@@ -1,0 +1,25 @@
+.form {
+    border: 2px solid black;
+    margin-top: 30px;
+    width: 30%;
+    height: fit-content;
+    padding: 10px;
+    background-color: rgb(235, 240, 238);
+
+}
+
+.formbody {
+    height: fit-content;
+    height: 689px;
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    color: red;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+}
